@@ -6,7 +6,7 @@ import { Button } from "../../ui/Button";
 import { ContactForm } from "./ContactForm";
 import { buildWhatsAppLink } from "../../../utils/helpers";
 
-const WHATSAPP_PHONE = "+573000000000";
+const WHATSAPP_PHONE = "+573236293543";
 const WHATSAPP_MESSAGE =
   "Hola IOI, me interesa conversar sobre un proyecto de software.";
 
@@ -19,7 +19,7 @@ const INFO = [
   {
     icon: Mail,
     label: "Correo",
-    value: "contacto@ioi.dev",
+    value: "gerencia@ioidev.solutions",
   },
   {
     icon: MessageCircle,

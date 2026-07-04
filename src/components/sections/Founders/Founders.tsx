@@ -38,6 +38,7 @@ export function Founders() {
 
                 <div className="flex items-center gap-5">
 
+                   {/* 
                   <div className="h-24 w-24 overflow-hidden rounded-2xl border border-ink-400/70">
                     {founder.photo ? (
                       <img
@@ -51,6 +52,7 @@ export function Founders() {
                       </div>
                     )}
                   </div>
+                  */}
 
                   <div>
                     <h3 className="font-display text-2xl text-white">

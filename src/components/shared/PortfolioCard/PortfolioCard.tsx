@@ -57,11 +57,20 @@ export function PortfolioCard({ project }: PortfolioCardProps) {
     image,
   } = project;
 
+  const API_URL = import.meta.env.VITE_API_URL;
+  const BACKEND_URL = API_URL.replace("/api", "");
+
+  const imageUrl = image
+    ? image.startsWith("http")
+      ? image
+      : `${BACKEND_URL}/storage/${image}`
+    : null;
+
   return (
     <Card interactive className="group flex h-full flex-col gap-5 p-5">
-      {image ? (
+      {imageUrl ? (
         <img
-          src={`http://127.0.0.1:8000/storage/${image}`}
+          src={imageUrl}
           alt={name}
           className="aspect-[16/10] w-full rounded-xl border border-ink-400/60 object-cover"
         />

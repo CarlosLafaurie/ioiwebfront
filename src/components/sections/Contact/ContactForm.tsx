@@ -3,6 +3,7 @@ import { ArrowRight, Check } from "lucide-react";
 import { Button } from "../../ui/Button";
 import { Input } from "../../ui/Input";
 import { Textarea } from "../../ui/Textarea";
+import { api } from "../../../services/api";
 
 type Status = "idle" | "submitting" | "sent";
 
@@ -26,21 +27,7 @@ export function ContactForm() {
     };
 
     try {
-      const response = await fetch(
-        "http://127.0.0.1:8000/api/leads",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-          body: JSON.stringify(data),
-        }
-      );
-
-      if (!response.ok) {
-        throw new Error("Error al enviar el formulario");
-      }
+      await api.post("/leads", data);
 
       setStatus("sent");
       form.reset();
@@ -48,7 +35,6 @@ export function ContactForm() {
       setTimeout(() => {
         setStatus("idle");
       }, 3000);
-
     } catch (error) {
       console.error(error);
       alert("No se pudo enviar el formulario.");
@@ -59,19 +45,9 @@ export function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-5">
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-        <Input
-          label="Nombre"
-          name="name"
-          placeholder="Tu nombre completo"
-          required
-        />
+        <Input label="Nombre" name="name" placeholder="Tu nombre completo" required />
 
-        <Input
-          label="Empresa"
-          name="company"
-          placeholder="Nombre de la empresa"
-          required
-        />
+        <Input label="Empresa" name="company" placeholder="Nombre de la empresa" required />
       </div>
 
       <Input

@@ -84,16 +84,6 @@ export function Footer() {
           </div>
         </div>
       </div>
-
-      {/* Decorative oversized wordmark */}
-      <div
-        aria-hidden
-        className="pointer-events-none select-none overflow-hidden"
-      >
-        <div className="font-display flex items-end justify-center pb-2 text-[clamp(6rem,22vw,18rem)] leading-[0.85] tracking-[-0.06em] text-white/[0.03]">
-          &lt;IOI&gt;
-        </div>
-      </div>
     </footer>
   );
 }
