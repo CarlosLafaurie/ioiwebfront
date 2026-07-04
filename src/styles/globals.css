@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --color-ink-0: #000000;
+  --color-ink-50: #050505;
+  --color-ink-100: #0a0a0a;
+  --color-ink-200: #111111;
+  --color-ink-300: #1a1a1a;
+  --color-ink-400: #232323;
+  --color-ink-500: #2e2e2e;
+  --color-ink-600: #6b6b6b;
+  --color-ink-700: #a3a3a3;
+  --color-ink-800: #d4d4d4;
+  --color-ink-900: #f5f5f5;
+  --color-ink-950: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background-color: #000000;
+  color: #f5f5f5;
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+  font-feature-settings: "cv11", "ss01", "ss03";
+  letter-spacing: -0.011em;
+}
+
+::selection {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Subtle scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+::-webkit-scrollbar-thumb {
+  background: #1a1a1a;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2e2e2e;
+}
+
+/* Display headings */
+.font-display {
+  letter-spacing: -0.04em;
+  font-weight: 500;
+}
